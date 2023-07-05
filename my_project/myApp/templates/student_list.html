@@ -1,0 +1,6 @@
+<h1>Daftar Mahasiswa</h1>
+<ul>
+    {% for student in students %}
+        <li>{{ student.name }} - {{ student.course.name }}</li>
+    {% endfor %}
+</ul>

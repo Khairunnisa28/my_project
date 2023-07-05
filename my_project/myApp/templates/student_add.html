@@ -1,0 +1,15 @@
+<h1>Tambah Mahasiswa</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="name">Nama:</label>
+    <input type="text" name="name" required>
+    <br>
+    <label for="course">Kursus:</label>
+    <select name="course" required>
+        {% for course in courses %}
+            <option value="{{ course.id }}">{{ course.name }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <button type="submit">Simpan</button>
+</form>

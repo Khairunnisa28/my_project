@@ -1,0 +1,17 @@
+<h1>Edit Mahasiswa</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="name">Nama:</label>
+    <input type="text" name="name" value="{{ student.name }}" required>
+    <br>
+    <label for="course">Kursus:</label>
+    <select name="course" required>
+        {% for course in courses %}
+            <option value="{{ course.id }}"
+            {% if course.id == student.course.id %}selected{% endif %}>
+            {{ course.name }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <button type="submit">Simpan</button>
+</form>
